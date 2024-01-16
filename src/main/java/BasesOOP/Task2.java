@@ -2,39 +2,42 @@ package BasesOOP;
 
 import org.w3c.dom.Node;
 
+import java.util.Arrays;
+
 public class Task2 {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList(new LinkedList.Node(5));
-        linkedList.add(10);
-        System.out.println(linkedList);
+        RandomFromArray random = new RandomFromArray(new int[]{1, 2, 3}, new int[]{1,2,10});
+        System.out.println(random.getRandom());
     }
 }
 
-class LinkedList{
-    public Node head;
-    public Node tail;
+class RandomFromArray {
+    private int[] values;
+    private int[] weights;
+    private int[] ranges;
+    private int sum;
 
-    static class Node{
-        public Integer value;
-        public Node next;
+    public RandomFromArray(int[] values, int[] weights) {
+        this.values = values;
+        this.weights = weights;
+        ranges = new int[values.length];
 
-        public Node(Integer value) {
-            this.value = value;
+        sum = 0;
+        for (int weight : weights) {
+            sum += weight;
+        }
+
+        int lastSum = 0;
+        for (int i = 0; i < ranges.length; i++) {
+            ranges[i] = lastSum;
+            lastSum += weights[i];
         }
     }
 
-    public LinkedList(Node node) {
-        this.head = node.next;
-        this.tail = node.next;
-    }
+    public int getRandom() {
+        int random = (int) (Math.random() * (sum - 1));
 
-    public void add(Integer value){
-        if(head!=null){
-            head = new Node(value);
-        }
-    }
-
-    public String toString(){
-        return "["+head + tail +"]";
+        int index = Arrays.binarySearch(ranges, random);
+        return values[index >= 0 ? index : -index - 2];
     }
 }
