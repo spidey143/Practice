@@ -4,6 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task1 {
+    public static void main(String[] args) {
+        Ball ball = new Ball(4.5);
+        Cylinder cylinder = new Cylinder(2.0, 2.0);
+        Pyramid pyramid = new Pyramid(100.0, 100.0);
+
+        Box box = new Box(1000.0);
+
+        System.out.println(box.add(ball)); // ok
+        System.out.println(box.add(cylinder)); // ok
+        System.out.println(box.add(pyramid)); // failed
+    }
 }
 
 class Shape {
@@ -58,13 +69,23 @@ class Ball extends SolidOfRevolution {
     }
 }
 
-class Box extends Shape{
+class Box extends Shape {
     private List<Shape> shapes = new ArrayList<>();
     private Double available;
 
     public Box(Double available) {
         super(available);
         this.available = available;
+    }
+
+    public boolean add(Shape shape) {
+        if (available >= shape.getVolume()) {
+            shapes.add(shape);
+            available -= shape.getVolume();
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

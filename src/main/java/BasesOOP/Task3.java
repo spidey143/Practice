@@ -3,24 +3,24 @@ package BasesOOP;
 public class Task3 {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.addStart(5);
-        linkedList.addStart(10);
-        linkedList.addStart(11);
-        System.out.println(linkedList);
+        linkedList.add(5);
+        linkedList.add(10);
+        linkedList.add(11);
+        linkedList.add(12);
     }
 }
 
 class LinkedList {
     public Node head;
-    public Node tail;
+    public int size;
 
     static class Node {
         public Integer value;
         public Node next;
-        public Node prev;
 
-        public Node(Integer value) {
+        public Node(Integer value, Node next) {
             this.value = value;
+            this.next = next;
         }
 
         public String toString() {
@@ -30,28 +30,20 @@ class LinkedList {
 
     public LinkedList() {
         this.head = null;
-        this.tail = null;
     }
 
-    public void addStart(Integer value) {
-        Node node = new Node(value);
-        if(head == null && tail == null) {
-            this.head = node;
-            this.tail = node;
+    public void add(Integer value) {
+        Node node = new Node(value, null);
+        if (head == null) {
+            head = node;
+        } else {
+            Node currentNode = head;
+            while (currentNode.next != null) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = node;
+            System.out.println(currentNode.value + " " + currentNode.next);
         }
-        node.next = head;
-        head = node;
-        tail.prev = node;
-        System.out.print(
-                "h:" + head.value +
-                "\nv:" + head.prev + "\nn:"+ head.next);
-    }
-
-    public void addEnd(Integer value) {
-        Node node = new Node(value);
-        node.prev = tail;
-        head = node;
-        System.out.println(head.value + " " + head.next);
     }
 }
 
