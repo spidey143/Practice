@@ -2,7 +2,7 @@ package Collections;
 
 import java.util.*;
 
-public class Task1 {
+public class Task7_0 {
     public static void main(String[] args) {
         frequencyDictionary("Пример текста для анализа частоты частоты слов слов слов слов слов");
     }

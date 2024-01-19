@@ -1,6 +1,6 @@
 package Recursion;
 
-public class Task3 {
+public class Task3_2 {
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
         tree.insert(10);

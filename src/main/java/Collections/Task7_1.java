@@ -2,7 +2,7 @@ package Collections;
 
 import java.util.*;
 
-public class Task2 {
+public class Task7_1 {
     public static void main(String[] args) {
         List<Integer> sasd = new ArrayList<>();
         sasd.add(1);
@@ -18,7 +18,7 @@ public class Task2 {
         System.out.println(collectionNoDuplicate(sasd1));
     }
 
-    public static  <X> Collection<X> collectionNoDuplicate(Collection<X> collection){
+    public static  <T> Collection<T> collectionNoDuplicate(Collection<T> collection){
         return new HashSet<>(collection);
     }
 }

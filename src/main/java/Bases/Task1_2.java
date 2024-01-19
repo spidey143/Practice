@@ -1,6 +1,6 @@
 package Bases;
 
-public class Task3 {
+public class Task1_2 {
     public static void main(String[] args) {
         for (int i = 2; i < 100; i++) {
             boolean isPrime = true;

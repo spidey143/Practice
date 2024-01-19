@@ -3,7 +3,7 @@ package BasesOOP;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Task1 {
+public class Task2_1 {
     public static void main(String[] args) {
         Vector v = new Vector(1.0,2.,3.0);
         Vector v2 = new Vector(2.2,4.0,5.0);

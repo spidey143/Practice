@@ -1,6 +1,6 @@
 package BasesOOP;
 
-public class Task3 {
+public class Task2_2 {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         linkedList.add(5);

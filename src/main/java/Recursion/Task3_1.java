@@ -1,6 +1,6 @@
 package Recursion;
 
-public class Task2 {
+public class Task3_1 {
     public static void main(String[] args) {
         System.out.println(Equations.solveEquation(0,10));
     }

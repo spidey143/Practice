@@ -1,11 +1,8 @@
 package Recursion;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
 
-public class Task1 {
+public class Task3_0 {
     public static void main(String[] args) {
         Integer[] nums = {1, 2, 3, 4, 5};
         System.out.println(elementIsIncluded(nums, 10));

@@ -3,7 +3,7 @@ package Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Task4 {
+public class Task7_3 {
     public static void main(String[] args) {
         Integer[] array = {1, 2, 3, 4, 5};
         ArrayIterator<Integer> iterator = new ArrayIterator<>(array);

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Task7_7 {
-    public static <K> void main(String[] args) {
+    public static void main(String[] args) {
         Integer[] array = new Integer[]{1,2,3,4,5,5,5};
         System.out.println(countElements(array));
     }

@@ -1,10 +1,8 @@
 package BasesOOP;
 
-import org.w3c.dom.Node;
-
 import java.util.Arrays;
 
-public class Task2 {
+public class Task2_0 {
     public static void main(String[] args) {
         RandomFromArray random = new RandomFromArray(new int[]{1, 2, 3}, new int[]{1,2,10});
         System.out.println(random.getRandom());

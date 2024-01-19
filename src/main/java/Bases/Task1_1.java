@@ -2,7 +2,7 @@ package Bases;
 
 import java.util.Arrays;
 
-public class Task2 {
+public class Task1_1 {
     public static void main(String[] args) {
         int[] nums = new int[]{5,4,3,2,1};
         System.out.println(Arrays.toString(nums));

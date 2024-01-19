@@ -3,7 +3,7 @@ package Inheritance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task2 {
+public class Task4_1 {
     public static void main(String[] args) {
         BallTwo ball = new BallTwo(4.5);
         CylinderTwo cylyinder = new CylinderTwo(2.0, 2.0);
