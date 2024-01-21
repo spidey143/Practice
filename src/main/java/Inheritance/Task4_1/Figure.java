@@ -1,13 +1,13 @@
-package Inheritance;
+package Inheritance.Task4_1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task4_1 {
+public class Figure {
     public static void main(String[] args) {
-        BallTwo ball = new BallTwo(4.5);
-        CylinderTwo cylyinder = new CylinderTwo(2.0, 2.0);
-        PyramidTwo pyramid = new PyramidTwo(100.0, 100.0);
+        Ball ball = new Ball(4.5);
+        Cylinder cylyinder = new Cylinder(2.0, 2.0);
+        Pyramid pyramid = new Pyramid(100.0, 100.0);
 
         BoxTwo box = new BoxTwo(1000);
 
@@ -17,16 +17,16 @@ public class Task4_1 {
     }
 }
 
-abstract class ShapeAbs {
+abstract class Shape {
     private Double volume;
 
     public abstract Double getVolume();
 }
 
-abstract class SolidOfRevolutionAbs extends ShapeAbs {
+abstract class SolidOfRevolution extends Shape {
     private double radius;
 
-    public SolidOfRevolutionAbs(double radius) {
+    public SolidOfRevolution(double radius) {
         this.radius = radius;
     }
 
@@ -35,11 +35,11 @@ abstract class SolidOfRevolutionAbs extends ShapeAbs {
     }
 }
 
-class PyramidTwo extends ShapeAbs {
+class Pyramid extends Shape {
     private Double s;
     private Double h;
 
-    public PyramidTwo(Double s, Double h) {
+    public Pyramid(Double s, Double h) {
         this.s = s;
         this.h = h;
     }
@@ -50,10 +50,10 @@ class PyramidTwo extends ShapeAbs {
     }
 }
 
-class CylinderTwo extends SolidOfRevolutionAbs {
+class Cylinder extends SolidOfRevolution {
     private Double height;
 
-    public CylinderTwo(Double radius, Double height) {
+    public Cylinder(Double radius, Double height) {
         super(radius);
         this.height = height;
     }
@@ -64,8 +64,8 @@ class CylinderTwo extends SolidOfRevolutionAbs {
     }
 }
 
-class BallTwo extends SolidOfRevolutionAbs {
-    public BallTwo(double radius) {
+class Ball extends SolidOfRevolution {
+    public Ball(double radius) {
         super(radius);
     }
 
@@ -75,15 +75,15 @@ class BallTwo extends SolidOfRevolutionAbs {
     }
 }
 
-class BoxTwo extends ShapeAbs {
-    private List<ShapeAbs> shapes = new ArrayList<>();
+class BoxTwo extends Shape {
+    private List<Shape> shapes = new ArrayList<>();
     private double available;
 
     public BoxTwo(double available) {
         this.available = available;
     }
 
-    public boolean add(ShapeAbs shape) {
+    public boolean add(Shape shape) {
         if (available >= shape.getVolume()) {
             shapes.add(shape);
             available -= shape.getVolume();

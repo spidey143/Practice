@@ -10,7 +10,7 @@ public class Task1_0 {
         int max = 0;
         int min = 999;
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = new Random().nextInt(10);
+            nums[i] = new Random().nextInt(100);
             s += nums[i];
             if(nums[i] > max) max = nums[i];
             if (nums[i] < min) min = nums[i];

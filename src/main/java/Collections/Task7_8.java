@@ -13,15 +13,12 @@ public class Task7_8 {
         System.out.println(swappedMap);
     }
 
-    public static <K,V> Map<V, Collection<K>> swapKeysAndValues(Map<K,V> map){
+    public static <K,V> Map<V, Collection<K>> swapKeysAndValues(Map<K,V> map) {
         Map<V, Collection<K>> resultMap = new HashMap<>();
-        Collection<V> arrayList = new ArrayList<>();
         for(Map.Entry<K,V> it: map.entrySet()){
-            V value = it.getValue();
-            //Collection<K> keys = map.getOrDefault();
-            /*keys.add(it.getKey());
-            resultMap.put(value, keys);*/
-
+            Collection<K> keys = resultMap.getOrDefault(it.getValue(), new ArrayList<>());
+            keys.add(it.getKey());
+            resultMap.put(it.getValue(), keys);
         }
         return resultMap;
     }
